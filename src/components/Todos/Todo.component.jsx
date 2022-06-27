@@ -21,13 +21,14 @@ const Todo = ({ todo, toggleComplete, handleDelete, handleEdit }) => {
   return (
     <div className='todo'>
       <input
+        className='todo-text'
         style={{ textDecoration: todo.completed && "line-through" }}
         type='text'
         value={todo.title === "" ? newTitle : todo.title}
         onChange={handleChange}
       />
 
-      <div>
+      <div className='todo-btns'>
         <button
           className='button-complete'
           onClick={() => toggleComplete(todo)}>
